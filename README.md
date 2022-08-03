@@ -9,5 +9,5 @@ In the project directory, you can run:
 npm i
 进行安装
 
-npm run start 
+npm run start
 启动项目
