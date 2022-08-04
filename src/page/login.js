@@ -1,25 +1,34 @@
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input,Alert } from 'antd';
-import "@/css/loginStyle.css"
+import "@/asset/css/loginStyle.css"
 import classnames from "classnames"
 export default function Login(props) {
-  var [errorTips,setErrorTips]=useState(true);
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+  var [errorTipsPass,setErrorTipsPass]=useState(true);
+  var [errorTipsMes,setErrorTipsMes]=useState(true);
+  
+  const onFinish = (values) => {
         if(values.username=="admin"&&values.password=="123456"){
           localStorage.setItem("admin","true");
           props.history.push("/");
         }else{
+          setErrorTipsPass(false);
+          setErrorTipsMes(true);
           return false;
         };
       };
     const onFinishFailed=function(){
-      setErrorTips(false);
+      setErrorTipsMes(false);
+      setErrorTipsPass(true);
     }
   return (
     <>
-    <Alert type="error" message="Error text" banner className={'alertTips'}/>
+    <div className={classnames({"alertTips":errorTipsMes})}>
+    <Alert type="error" message="输入信息有误请重新输入" banner/>
+    </div>
+    <div className={classnames({"alertTips":errorTipsPass})}>
+    <Alert type="error" message="输入的账号密码错误" banner/>
+    </div>
     <div className='login'>
     <Form
     name="normal_login"
@@ -43,15 +52,6 @@ export default function Login(props) {
         type="password"
         placeholder="Password"
       />
-    </Form.Item>
-    <Form.Item>
-      <Form.Item name="remember" valuePropName="checked" noStyle>
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <a className="login-form-forgot" href="">
-        Forgot password
-      </a>
     </Form.Item>
 
     <Form.Item>
