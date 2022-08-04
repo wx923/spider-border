@@ -1,0 +1,13 @@
+body,html{
+    width: 100%;
+    height: 100%;
+}
+.every-back{
+    background-color: #343333;
+}
+.top-clor{
+    background-color:#3d7dd7;
+}
+.wrap-middle{
+    margin: 0 auto;
+}

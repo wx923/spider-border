@@ -1,10 +1,18 @@
 import Home from "@/page/home";
 import Login from "@/page/login";
-
-export default [
-    {path:"/",
-    exact:true,
-    component:Home},
+import { Redirect } from "react-router";
+import {homeChildrenRoutes} from "./choosePage"
+export default [{
+    path:'/',
+    render:()=>{
+        return <Redirect to="/home/tieba"></Redirect>
+    },
+    component:Home,
+    exact: true
+},
+    {path:"/home",
+    component:Home,
+    routes:homeChildrenRoutes},
     {
         path:"/login",
         component:Login
