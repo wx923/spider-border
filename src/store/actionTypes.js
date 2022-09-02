@@ -1,0 +1,1 @@
+export const GET_TIEBA_HIGH_DATA="GET_TIEBA_HIGH_DATA"

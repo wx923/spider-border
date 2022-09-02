@@ -5,7 +5,7 @@ import {homeChildrenRoutes} from "./choosePage"
 export default [{
     path:'/',
     render:()=>{
-        return <Redirect to="/home/tieba"></Redirect>
+        return <Redirect to="/login"></Redirect>
     },
     component:Home,
     exact: true

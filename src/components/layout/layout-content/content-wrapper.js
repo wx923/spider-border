@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 const ContentWrapper=styled.div`
-width:85%;
+width:95%;
 position:relative;
 margin-top:30px;
 display: flex;
 justify-content: space-between; 
 `
 export const ContentWarapperLeft=styled.div`
-width:20%;
+width:15%;
+height:650px;
 background-color: #5e9eff;
 border-radius: 20px;
 .badge{
@@ -38,6 +39,14 @@ color:#e7e7e8;
 .show-options:hover{ background: #0085f2; }
 `
 export const ContentWarapperRight=styled.div`
-width:70%;
+width:80%;
+border: 1px solid #cdcdcd;
+.value-group-selection{
+    margin-top:10px;
+}
+`
+export const ListWrapperRight=styled.div`
+padding:20px;
+width:90%
 `
 export default ContentWrapper;

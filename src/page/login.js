@@ -8,9 +8,9 @@ export default function Login(props) {
   var [errorTipsMes,setErrorTipsMes]=useState(true);
   
   const onFinish = (values) => {
-        if(values.username=="admin"&&values.password=="123456"){
+        if(values.username=="admin"&&values.password=="mas20091226"){
           localStorage.setItem("admin","true");
-          props.history.push("/");
+          props.history.push("/home/tieba");
         }else{
           setErrorTipsPass(false);
           setErrorTipsMes(true);
